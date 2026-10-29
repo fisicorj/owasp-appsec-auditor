@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AppSec audit findings",
+  "type": "object",
+  "required": ["project", "mode", "scope", "findings", "limitations"],
+  "properties": {
+    "project": {"type": "string"},
+    "mode": {"enum": ["audit", "triage", "remediate", "retest", "report"]},
+    "scope": {"type": "array", "items": {"type": "string"}},
+    "owasp_edition": {"type": ["string", "null"]},
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "status", "severity", "evidence", "remediation", "validation"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "status": {"enum": ["Confirmed", "Potential", "Needs runtime verification", "False positive", "Not observed"]},
+          "severity": {"enum": ["Critical", "High", "Medium", "Low", "Informational"]},
+          "owasp": {"type": ["string", "null"]},
+          "cwe": {"type": ["string", "null"]},
+          "location": {"type": ["string", "null"]},
+          "evidence": {"type": "string"},
+          "impact": {"type": "string"},
+          "remediation": {"type": "string"},
+          "validation": {"type": "string"},
+          "cvss": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

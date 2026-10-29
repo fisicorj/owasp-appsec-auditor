@@ -1,0 +1,26 @@
+{
+  "project": "DEMO ONLY \u2014 not an audited system",
+  "mode": "report",
+  "scope": [
+    "example input"
+  ],
+  "owasp_edition": "Not assigned",
+  "findings": [
+    {
+      "id": "DEMO-001",
+      "title": "Example authorization review needed",
+      "status": "Potential",
+      "severity": "Medium",
+      "owasp": null,
+      "cwe": null,
+      "location": "example.py:10 (illustrative)",
+      "evidence": "Illustrative finding only; no source code reviewed.",
+      "impact": "Requires verification.",
+      "remediation": "Verify access checks on object retrieval.",
+      "validation": "Add an authorization regression test."
+    }
+  ],
+  "limitations": [
+    "Demo data; no tools executed and no project assessed."
+  ]
+}
